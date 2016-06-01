@@ -25,6 +25,7 @@ var indicator = new VisualTimer({
 					x: 123,
 					y: 456,
 					seconds: 60,
+					tween:true,
 					onComplete: function() {...}
 				});
 indicator.start();
@@ -41,6 +42,7 @@ You can use the following options when initialising the indicator:
 | x| (required) the x coordinate for the indicator|
 | y| (required) the y coordinate for the indicator|
 | seconds| (required) the time to count|
+| tween | (optional, default true) Load pusedo-tween |
 | onComplete| (required) a function to call when the time is up|
 | type| (optional, default 'down') this is either 'up' or 'down' to have the indicator start from 0 up to `seconds` or from `seconds` down to 0|
 | context| (optional) you might want to pass `this` for the context to have the `onComplete` callback run in that context. If not specified, it'll run in the context of the indicator|
