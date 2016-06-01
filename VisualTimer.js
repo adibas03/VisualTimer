@@ -16,7 +16,8 @@
 		if (opts.type) {
 			this.type = opts.type;
 		}
-		this.totalTime = opts.seconds;
+		this.loop = opts.tween?20:1000;
+		this.totalTime = opts.seconds*(1000/this.loop));
 		this.game = opts.game;
 		this.onComplete = opts.onComplete;
 		var key = 'timer';
@@ -37,7 +38,7 @@
 			var self = this;
 			this.hasFinished = false;
 			this.timer = this.game.time.create(true);
-			this.timer.repeat(Phaser.Timer.SECOND, this.totalTime, timerTick, this);
+			this.timer.repeat(this.loop, this.totalTime, timerTick, this);
 			this.timer.onComplete.add(function() {
 				self.hasFinished = true;
 				if (self.onComplete) {
@@ -75,7 +76,7 @@
 		},
 
 		remainingTime: function() {
-			return this.totalTime - this.timer.seconds;
+			return this.totalTime - this.timer.seconds*(1000/this.loop));
 		}
 	};
 
