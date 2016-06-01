@@ -16,8 +16,8 @@
 		if (opts.type) {
 			this.type = opts.type;
 		}
-		this.loop = opts.tween?20:1000;
-		this.totalTime = opts.seconds*(1000/this.loop));
+		this.loop = opts.tween == false?1000:20;
+		this.totalTime = opts.seconds*(1000/this.loop);
 		this.game = opts.game;
 		this.onComplete = opts.onComplete;
 		var key = 'timer';
@@ -76,7 +76,7 @@
 		},
 
 		remainingTime: function() {
-			return this.totalTime - this.timer.seconds*(1000/this.loop));
+			return this.totalTime - this.timer.seconds*(1000/this.loop);
 		}
 	};
 
