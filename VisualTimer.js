@@ -19,13 +19,14 @@
 		this.loop = opts.tween == false?1000:20;
 		this.totalTime = opts.seconds*(1000/this.loop);
 		this.game = opts.game;
+		if(opts.group)this.group = opts.group;
 		this.onComplete = opts.onComplete;
 		var key = 'timer';
 		if (opts.key) {
 			key = opts.key;
 		}
-		this.game.add.sprite(opts.x, opts.y, key, 1);
-		this.sprite = this.game.add.sprite(opts.x, opts.y, key, 0);
+		(this.group)?this.group.create(opts.x, opts.y, key, 1):this.game.add.sprite(opts.x, opts.y, key, 1);
+		this.sprite = (this.group)?this.group.create(opts.x, opts.y, key, 0):this.game.add.sprite(opts.x, opts.y, key, 0);
 		this.fullWidth = this.sprite.width;
 		this.reset();
 	}
