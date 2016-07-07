@@ -8,7 +8,7 @@ Easily add a countdown (or count up) timer for your [Phaser](http://phaser.io) g
 
 You can clone this repo or use bower to install it:
 ```
-bower install git://github.com/terebentina/VisualTimer.git --save
+bower install git://github.com/adibas03/VisualTimer.git --save
 ```
 
 Usage:
@@ -44,6 +44,8 @@ You can use the following options when initialising the indicator:
 | seconds| (required) the time to count|
 | onComplete| (required) a function to call when the time is up|
 | tween | (optional, default true) Load pusedo-tween |
+| pulse | (optional, default false) Activate pulse effect on timer |
+| notify | (optional, default false) Activate notification towards end of timer. Requires audio file loaded as `clock_sound` |
 | group | (optional) Use group to create Loading bar: x and y a reference of the group |
 | type| (optional, default 'down') this is either 'up' or 'down' to have the indicator start from 0 up to `seconds` or from `seconds` down to 0|
 | context| (optional) you might want to pass `this` for the context to have the `onComplete` callback run in that context. If not specified, it'll run in the context of the indicator|
