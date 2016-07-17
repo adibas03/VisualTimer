@@ -85,7 +85,7 @@
 			this.timer.resume();
 		},
 		end: function(kill){
-			this.timer.stop();
+			this.stop();
 			var time = (this.type == 'down')?0:1;
 			var wdt = time*this.fullWidth;
 			if(wdt != this.rect.width){
