@@ -58,7 +58,7 @@ You can use the following options when initialising the indicator:
 |--------|-------------|
 | start| resets the timer and starts from the beginning.|
 | stop| stops the timer (note that `onComplete` will not be called when you call `stop`)|
-| end| fast forwards the timer to the end and runs the  onComplete function if present. A Boolean function is passed to kill the sprite.|
+| end| fast forwards the timer to the end and runs the  onComplete function if present. A Boolean var can be passed to kill the sprite on completion.|
 | reset| resets the timer|
 | pause| pauses the timer|
 | resume| resumes the timer after a pause|
