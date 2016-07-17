@@ -84,6 +84,25 @@
 		resume: function() {
 			this.timer.resume();
 		},
+		end: function(kill){
+			this.timer.stop();
+			var time = (this.type == 'down')?0:1;
+			var wdt = time*this.fullWidth;
+			if(wdt != this.rect.width){
+			var self = this;
+			this.game.add.tween(this.sprite)
+			.to({width:wdt},200,Phaser.Easing.Linear.None,true,0,0,false)
+			.onComplete.add(function(){
+				if(kill)self.sprite.kill();
+			})
+		}
+		else if(kill)self.sprite.kill();
+
+			this.hasFinished = true;
+			if (this.onComplete)
+				this.onComplete();
+
+		},
 
 		remainingTime: function() {
 			return this.totalTime - this.timer.seconds*(1000/this.loop);
