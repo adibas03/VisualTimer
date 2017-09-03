@@ -1,0 +1,24 @@
+{
+  "name": "visualtimer",
+  "version": "1.0.0",
+  "description": "Countdown progress bar for phaserjs",
+  "main": "VisualTimer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adibas03/VisualTimer.git"
+  },
+  "keywords": [
+    "phaserjs",
+    "timer",
+    "countdown"
+  ],
+  "author": " Adibas03",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adibas03/VisualTimer/issues"
+  },
+  "homepage": "https://github.com/adibas03/VisualTimer#readme"
+}
