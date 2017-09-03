@@ -118,8 +118,8 @@
 		if(this.warn)if((myTime / this.totalTime) < (this.type == 'down' ?0.36:1-0.36))this.warn.isPlaying?'':this.warn.loopFull();
 	}
 
-
-	if (module) {
+	if (typeof module !== 'undefined') {
 		module.exports = VisualTimer;
 	}
+	else window.VisualTimer = VisualTimer;
 })();
