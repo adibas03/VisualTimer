@@ -9,6 +9,11 @@ Easily add a countdown (or count up) timer for your [Phaser](http://phaser.io) g
 You can clone this repo or use bower to install it:
 ```
 bower install git://github.com/adibas03/VisualTimer.git --save
+```  
+
+To install on NPM:
+```
+npm install git://github.com/adibas03/VisualTimer.git --save
 ```
 
 Usage:
