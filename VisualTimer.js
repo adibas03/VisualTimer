@@ -45,7 +45,7 @@
 			var self = this;
 			this.hasFinished = false;
 			this.timer = this.game.time.create(true);
-			this.timer.repeat(this.loop, this.totalTime, timerTick, this);
+			this.timer.repeat(this.loop, this.totalTime, this.timerTick, this);
 			this.timer.onComplete.add(function() {
 				self.hasFinished = true;
 				if(self.warn)self.warn.stop();
@@ -106,17 +106,16 @@
 
 		remainingTime: function() {
 			return this.totalTime - this.timer.seconds*(1000/this.loop);
+		},
+		timerTick: function() {
+			/*jshint validthis:true */
+			var myTime = (this.type == 'down') ? this.remainingTime() : this.timer.seconds;
+			this.rect.width = Math.max(0, (myTime / this.totalTime) * this.fullWidth);
+			this.sprite.crop(this.rect);
+			if(this.warn)if((myTime / this.totalTime) < (this.type == 'down' ?0.36:1-0.36))this.warn.isPlaying?'':this.warn.loopFull();
 		}
 	};
 
-
-	function timerTick() {
-		/*jshint validthis:true */
-		var myTime = (this.type == 'down') ? this.remainingTime() : this.timer.seconds;
-		this.rect.width = Math.max(0, (myTime / this.totalTime) * this.fullWidth);
-		this.sprite.crop(this.rect);
-		if(this.warn)if((myTime / this.totalTime) < (this.type == 'down' ?0.36:1-0.36))this.warn.isPlaying?'':this.warn.loopFull();
-	}
 
 	if (typeof module !== 'undefined') {
 		module.exports = VisualTimer;
